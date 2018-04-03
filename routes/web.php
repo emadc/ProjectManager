@@ -8,6 +8,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('tweets/create', 'TweetsController@create');
+Route::get('projets/create', 'ProjetsController@create');
+
+Route::post('projets', 'ProjetsController@store');
         
         

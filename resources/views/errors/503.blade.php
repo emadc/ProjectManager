@@ -26,7 +26,7 @@
                 vertical-align: middle;
             }
 
-            .content {
+            .description {
                 text-align: center;
                 display: inline-block;
             }
@@ -39,7 +39,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="content">
+            <div class="description">
                 <div class="title">Be right back.</div>
             </div>
         </div>
