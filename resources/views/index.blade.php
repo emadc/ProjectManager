@@ -20,9 +20,16 @@
 					<a class="media-left" href="#"> <!-- Photo de profil -->
 					</a>
 					<div class="media-body">
-						<h5 class="media-heading">
-							@??<small class="pull-right text-muted">{{ strftime('%d/%m/%Y', strtotime($projet->created_at)) }}</small>
-						</h5>
+						<h4 class="media-heading">
+							@??<small class="pull-right text-muted">{{ $projet->created_at->format('d/m/Y') }}</small>
+						</h4>
+
+
+						<h4 class="media-heading">
+							@??<small class="pull-right text-muted">{{ $projet->created_at->diffForHumans() }}</small>
+						</h4>
+
+
 						{{ $projet->description }}
 					</div>
 				</div>
