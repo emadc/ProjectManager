@@ -10,7 +10,7 @@
 				</a>
 				<div class="media-body">
 					<h4 class="media-heading">
-						@??
+						<a href="{{ url('/users/' . $projet->user_id) }}">{{ '@' . $projet->user->name}}</a>
 						<small class="pull-right text-muted">{{ $projet->created_at->diffForHumans() }}</small>
 					</h4>
 					{{ $projet->titre }}
@@ -23,4 +23,3 @@
 	</div>
 </div>
 @endsection
-

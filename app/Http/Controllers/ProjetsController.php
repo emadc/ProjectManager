@@ -34,6 +34,7 @@ class ProjetsController extends Controller
         
         $projet->description = $request->description;
         $projet->titre = $request->titre;
+        $projet->user_id = auth()->user()->id;
         $projet->save();
         
         return redirect('/');

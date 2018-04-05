@@ -14,9 +14,9 @@
 			<tbody>
 				@foreach ($projets as $projet)
 				<tr>
-					<td>??</td>
+					<td><a href="{{ url('/users/' . $projet->user_id) }}">{{ '@' . $projet->user->name}}</a></td>
 					<td>{{ $projet->description }}</td>
-					<td>{{ $projet->created_at->format('d/m/Y') }}</td>
+					<td>{{ $projet->created_at->format('d/m/Y h:m') }}</td>
 					<td>
 						<a href="{{ url('projets/' . $projet->id . '/edit') }}" class="btn btn-info">Modifier</a>
 					</td>

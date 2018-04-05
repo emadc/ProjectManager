@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<!-- Branding -->
-			<a class="navbar-brand" href="{{ url('/') }}"> Projet </a>
+			<a class="navbar-brand" href="{{ url('/') }}"> ProjetManager</a>
 		</div>
 		<div class="navbar-collapse collapse" id="app-navbar-collapse">
 			<ul class="nav navbar navbar-nav navbar-right">
@@ -24,6 +24,9 @@
 				<li>
 					<a href="{{ url('logout') }}">Déconnexion</a>
 				</li>
+				<li>
+					<a href="{{ url('projets') }}">Projets</a>
+				</li>				
 				<li>
 					<a href="{{ url('projets/create') }}">Nouveau projet</a>
 				</li>
