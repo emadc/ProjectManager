@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Projets extends Model
+class Projet extends Model
 {
     //
 }

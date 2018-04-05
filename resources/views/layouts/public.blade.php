@@ -11,7 +11,7 @@
 <body style="padding-top: 8rem;">
     <!-- Main navigation -->
     @include('partials/_nav')
-    @yield('description')
+    @yield('content')
 </body>
 </html>
 
