@@ -92,7 +92,7 @@ class ProjetsController extends Controller
      */
     public function destroy(Projet $projet)
     {
-        dd($projet->id);
+        // dd($projet->id);
         Projet::destroy($projet->id);
         
         return redirect('/projets');

@@ -36,7 +36,7 @@ Route::get('projets/{id}/edit', 'ProjetsController@edit');
 
 Route::put('projets/{id}', 'ProjetsController@update');
 
-Route::delete('projets/{id}', 'ProjetsController@destroy');
+Route::delete('projets/{projet}', 'ProjetsController@destroy');
 
 Auth::routes();
 
