@@ -26,15 +26,15 @@ Route::get('/asc', function () {
     ]);
 });
 
-Route::get('projets/create', 'ProjetsController@create');
+Route::get('projets/create/{user}', 'ProjetsController@create');
 
 Route::post('projets', 'ProjetsController@store');
         
 Route::get('projets/', 'ProjetsController@index');
 
-Route::get('projets/{id}/edit', 'ProjetsController@edit');
+Route::get('projets/{projet}/edit', 'ProjetsController@edit');
 
-Route::put('projets/{id}', 'ProjetsController@update');
+Route::put('projets/{projet}', 'ProjetsController@update');
 
 Route::delete('projets/{projet}', 'ProjetsController@destroy');
 
@@ -44,4 +44,4 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('users/{user}', 'UsersController@show');
+Route::get('users/{user}', 'UsersController@show');//FIXME Route::get('projets/{projet}', 'UsersController@show');

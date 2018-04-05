@@ -26,9 +26,12 @@
 				</li>
 				<li>
 					<a href="{{ url('projets') }}">Projets</a>
-				</li>				
+				</li>
 				<li>
-					<a href="{{ url('projets/create') }}">Nouveau projet</a>
+					<a href="{{ url('projets/create/' . $projet->user_id) }}">Nouveau projet</a>
+				</li>
+				<li>
+					<a href="{{ url('/users/' . $projet->user_id) }}">{{ '@' . $projet->user->name}} {{ ' - admin : ' . $projet->user->admin}}</a>
 				</li>
 				@endif
 			</ul>

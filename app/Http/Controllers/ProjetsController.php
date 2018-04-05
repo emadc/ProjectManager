@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Projet;
+use App\User;
 
 class ProjetsController extends Controller
 {
@@ -13,9 +14,9 @@ class ProjetsController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(User $user)
     {
-        return view('projets.create');
+        return view('projets.create',  compact('user'));
     }
 
     /**
@@ -48,7 +49,7 @@ class ProjetsController extends Controller
     public function index()
     {
         $projets = Projet::orderBy('created_at', 'desc')->paginate(10);
-       // dd($projets);
+        
         return view('projets.index', compact('projets'));
     }
     
@@ -57,10 +58,8 @@ class ProjetsController extends Controller
      * @param  integer $id
      * @return Response
      */
-    public function edit($id)
+    public function edit(Projet $projet)
     {
-        $projet = Projet::findOrFail($id);
-        
         return view('projets.edit', compact('projet'));
     }
     
@@ -70,12 +69,9 @@ class ProjetsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Projet $projet)
     {
-        //dd($id);
         $this->validate($request, ['description' => 'required|string|max:140']);
-        
-        $projet = Projet::findOrFail($id);
         
         $projet->description = $request->description;
         $projet->titre = $request->titre;
@@ -93,7 +89,6 @@ class ProjetsController extends Controller
      */
     public function destroy(Projet $projet)
     {
-        // dd($projet->id);
         Projet::destroy($projet->id);
         
         return redirect('/projets');
