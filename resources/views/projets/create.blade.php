@@ -1,13 +1,15 @@
-@extends('layouts.public') @section('title') Publier un nouveau projet @stop @section('description')
+@extends('layouts.public') 
+@section('title') 
+Publier un nouveau projet 
+@stop @section('description')
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-		<label for="description">Votre projet</label>
+			<label for="description">Votre projet</label>
 			<form action="{{ url('projets') }}" method="POST">
 				{{ csrf_field() }}
 				<div class="form-group">
-					<label for="titre">Titre</label>
-					<input name="titre" id="titre" class="form-control"/>
+					<label for="titre">Titre</label> <input name="titre" id="titre" class="form-control" />
 				</div>
 				<div class="form-group">
 					<label for="description">Description</label>

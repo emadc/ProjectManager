@@ -14,6 +14,8 @@ Accueil
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">@??<small class="pull-right text-muted">{{ $projet->created_at->diffForHumans() }}</small></h4>
+                            {{ $projet->titre }}
+                            <br>
                             {{ $projet->description }}
                         </div>
                     </div>
