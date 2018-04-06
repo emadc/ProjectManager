@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Projet;
-use App\User;
 
 class ProjetsController extends Controller
 {
@@ -14,9 +13,9 @@ class ProjetsController extends Controller
      *
      * @return Response
      */
-    public function create(User $user)
+    public function create()
     {
-        return view('projets.create',  compact('user'));
+        return view('projets.create');
     }
 
     /**

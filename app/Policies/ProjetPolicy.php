@@ -19,7 +19,7 @@ class ProjetPolicy
      */
     public function view(User $user, Projet $projet)
     {
-        //
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class ProjetPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -42,7 +42,7 @@ class ProjetPolicy
      */
     public function update(User $user, Projet $projet)
     {
-        //
+        return $projet->user_id === $user->id;
     }
 
     /**
@@ -54,6 +54,28 @@ class ProjetPolicy
      */
     public function delete(User $user, Projet $projet)
     {
-        //
+        return $projet->user_id === $user->id;
+    }
+    
+    /**
+     * Applies to all policies.
+     *
+     * @param  User $user
+     * @return boolean
+     */
+    public function before(User $user, $ability)
+    {
+        return $user->isAdmin();
+    }
+    
+    /**
+     * List projet.
+     *
+     * @param  User   $user
+     * @return boolean
+     */
+    public function list(User $user)
+    {
+        return true;
     }
 }
