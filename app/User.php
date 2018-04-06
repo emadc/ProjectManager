@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Policies\ProjetPolicy;
+use App\Policies\UserPolicy;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -25,6 +27,16 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+    
+    /**
+     * The policy mappings for the application.
+     *
+     * @var array
+     */
+    protected $policies = [
+        Projet::class => ProjetPolicy::class,
+        User::class => UserPolicy::class,
     ];
     
     /**
