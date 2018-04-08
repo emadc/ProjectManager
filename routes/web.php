@@ -26,17 +26,19 @@ Route::get('/asc', function () {
     ]);
 });
 
+Route::get('projets/', 'ProjetsController@index');
+	
 Route::get('projets/create', 'ProjetsController@create');
 
-Route::post('projets', 'ProjetsController@store');
-        
-Route::get('projets/', 'ProjetsController@index');
+Route::get('projets/{projet}', 'UsersController@show');
 
 Route::get('projets/{projet}/edit', 'ProjetsController@edit');
 
-Route::put('projets/{projet}', 'ProjetsController@update')->middleware('can:delete,App\Projet');
+Route::put('projets/{projet}', 'ProjetsController@update')->middleware('can:update,App\Projet');
 
 Route::delete('projets/{projet}', 'ProjetsController@destroy')->middleware('can:delete,App\Projet');
+
+Route::post('projets', 'ProjetsController@store');
 
 Auth::routes();
 
