@@ -27,7 +27,9 @@
 						<a href="{{ url('users/' . $projet->user_id) }}">{{ '@' . $projet->user->name }}</a>
 						<small class="pull-right text-muted">{{ $projet->created_at->diffForHumans() }}</small>
 					</h5>
-					{{ $projet->content }}
+					{{ $projet->titre }}
+					<br>
+					{{ $projet->description }}
 				</div>
 			</div>
 			@endforeach

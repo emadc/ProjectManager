@@ -34,11 +34,11 @@ Route::get('projets/{projet}', 'UsersController@show');
 
 Route::get('projets/{projet}/edit', 'ProjetsController@edit');
 
-Route::put('projets/{projet}', 'ProjetsController@update')->middleware('can:update,App\Projet');
-
-Route::delete('projets/{projet}', 'ProjetsController@destroy')->middleware('can:delete,App\Projet');
+Route::put('projets/{projet}', 'ProjetsController@update')->middleware('can:update,projet');
 
 Route::post('projets', 'ProjetsController@store');
+
+Route::delete('projets/{projet}', 'ProjetsController@destroy')->middleware('can:delete,projet');
 
 Auth::routes();
 
@@ -48,12 +48,12 @@ Route::get('/home', 'HomeController@index');
 
 //Route::get('users/{user}', 'UsersController@show');//FIXME Route::get('projets/{projet}', 'UsersController@show');
 
-Route::get('users/', 'UsersController@index')->middleware('can:list,App\User');
-Route::get('users/create', 'UsersController@create')->middleware('can:create,App\User');
-Route::get('users/{user}', 'UsersController@show')->middleware('can:view,App\User');
-Route::get('users/{user}/editprofile', 'UsersController@editProfile')->middleware('can:update,App\User');
-Route::post('users/{user}', 'UsersController@update')->middleware('can:update,App\User');
-Route::post('users', 'UsersController@store')->middleware('can:create,App\User');
-Route::delete('users/{user}', 'UsersController@destroy')->middleware('can:delete,App\User');
+Route::get('users/', 'UsersController@index')->middleware('can:list,user');
+Route::get('users/create', 'UsersController@create')->middleware('can:create,user');
+Route::get('users/{user}', 'UsersController@show')->middleware('can:view,user');
+Route::get('users/{user}/editprofile', 'UsersController@editProfile')->middleware('can:update,user');
+Route::post('users/{user}', 'UsersController@update')->middleware('can:update,user');
+Route::post('users', 'UsersController@store')->middleware('can:create,user');
+Route::delete('users/{user}', 'UsersController@destroy')->middleware('can:delete,user');
 
 

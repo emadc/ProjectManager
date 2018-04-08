@@ -52,6 +52,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+    	dd($request);
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
@@ -63,6 +64,7 @@ class UsersController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+        $user->admin = $request->admin;
         
         $user->save();
         

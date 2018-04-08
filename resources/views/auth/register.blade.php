@@ -46,6 +46,12 @@
 								<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
 							</div>
 						</div>
+						<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+							<label for="admin" class="col-md-4 control-label">Administrateur</label>
+							<div class="col-md-6">
+								<input type="checkbox" aria-label="Checkbox for following text input" name="admin" value="1">
+							</div>
+						</div>
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">Register</button>

@@ -11,6 +11,19 @@ class ProjetPolicy
     use HandlesAuthorization;
 
     /**
+     * Applies to all policies.
+     *
+     * @param  User $user
+     * @return boolean
+     */
+    public function before(User $user, $ability)
+    {
+    	if ($user->isAdmin ()){
+    		return true;
+    	}
+    }
+    
+    /**
      * Determine whether the user can view the projet.
      *
      * @param  \App\User  $user
@@ -58,19 +71,6 @@ class ProjetPolicy
     }
     
     /**
-     * Applies to all policies.
-     *
-     * @param  User $user
-     * @return boolean
-     */
-    public function before(User $user, $ability)
-    {
-    	if ($user->isAdmin())
-    		return true;
-        //return $user->isAdmin();
-    }
-    
-    /**
      * List projet.
      *
      * @param  User   $user
@@ -78,6 +78,6 @@ class ProjetPolicy
      */
     public function list(User $user)
     {
-        return true;
+    	return true;
     }
 }
